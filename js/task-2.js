@@ -1,15 +1,10 @@
 function calcAverageCalories(days) {
-  if (days.length < 1) {
+  let sumValue = 0;
+  if (days.length === 0) {
     return 0;
   } else {
-    let sumValue = 0;
     for (const day of days) {
-      const values = Object.values(day);
-      for (const value of values) {
-        if (typeof value === 'number') {
-          sumValue += value;
-        }
-      }
+      sumValue += day.calories;
     }
     return sumValue / days.length;
   }
@@ -46,14 +41,20 @@ console.log(calcAverageCalories([])); // 0
 //
 //
 //
-// 
-//function calcAverageCalories(days) {
-//   if (days.length === 0) {
+//
+
+// function calcAverageCalories(days) {
+//   if (days.length < 1) {
 //     return 0;
 //   } else {
 //     let sumValue = 0;
 //     for (const day of days) {
-//       sumValue += day.calories;
+//       const values = Object.values(day);
+//       for (const value of values) {
+//         if (typeof value === 'number') {
+//           sumValue += value;
+//         }
+//       }
 //     }
 //     return sumValue / days.length;
 //   }
